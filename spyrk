@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sys
+
+"""spyrk
+
+Usage:
+spyrk 1 5 22 13 53
+=> ▁▁▃▂▇
+
+spyrk 0 30 55 80 33 150
+=> ▁▂▃▅▂▇
+
+spyrk -h
+
+"""
+
+def spyrk(numbers):
+  ticks="▁ ▂ ▃ ▄ ▅ ▆ ▇ █".split()
+
+  # Round the numbers
+  numbers = map(int, numbers)
+
+  # Calculate the range of numbers
+  minimum = min(numbers)
+  maximum = max(numbers)
+  range = maximum - minimum
+
+  # Distribute range evenly across all ticks
+  step = max((range<<8)/(len(ticks)-1), 1)
+
+  # Calculate the heights of the ticks
+  heights = [((n-minimum)<<8)/step for n in numbers]
+
+  # Print the ticks
+  graph = "".join([ticks[h] for h in heights])
+  print graph
+
+if __name__ == '__main__':
+  if len(sys.argv) > 1:
+    spyrk(sys.argv[1:])
