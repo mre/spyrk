@@ -1,6 +1,6 @@
 The MIT License
 
-Copyright (c) Matthias Endler, http://www.matthias-endler.de
+Copyright (c) Matthias Endler, https://endler.dev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
